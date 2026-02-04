@@ -7,8 +7,8 @@ import { navlinks } from '../constants'
 const NavBar = () => {
     return (
         <>
-            <header>
-                <nav className='px-[250px] py-6'>
+            <header className='flex align-center justify-center'>
+                <nav className='flex align-center justify-center gap-[150px] px-10 py-6'>
                     <img src={logo} alt="logo" />
 
                     {/* creating nav links using an object and array */}
@@ -33,7 +33,7 @@ const NavBar = () => {
                         );
                     })()} */}
 
-                    <ul className='flex gap-[60px]'>
+                    <ul className='flex gap-[40px] text-white'>
                         {navlinks.map(({ label }) => (
                             <li key={label} className='list-none'>
                                 <a href={label}>{label}</a>
@@ -43,7 +43,7 @@ const NavBar = () => {
 
                     </ul>
 
-                    <div className='flex gap-4'>
+                    <div className='flex gap-[10px]'>
                         <button>
                             <img src={searchIcon} alt="search icon" />
                         </button>

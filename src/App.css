@@ -2,39 +2,18 @@
 
 @import "tailwindcss";
 
-/* @font-face {
-  font-family: "Regular";
-  src: url("/fonts/regular.otf");
-}
-
-@font-face {
-  font-family: "Medium";
-  src: url("/fonts/medium.otf");
-}
-
-@font-face {
-  font-family: "SemiBold";
-  src: url("/fonts/semibold.otf");
-}
-
-@font-face {
-  font-family: "Bold";
-  src: url("/fonts/bold.otf");
-} */
-
 * {
   scrollbar-color: var(--color-dark-100) var(--color-black);
 }
 
 :root {
-  --gradient-color: linear-gradient(
-    to bottom right,
-    #0894ff 0%,
-    #c959dd 34%,
-    #ff2e54 68%,
-    #ff9004
-  );
+  --gradient-color: linear-gradient(to bottom right,
+      #0894ff 0%,
+      #c959dd 34%,
+      #ff2e54 68%,
+      #ff9004);
 }
+
 
 @theme {
   --font-regular: "Regular";
@@ -48,19 +27,23 @@
 }
 
 html {
-  width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
-  width: 100vw;
-  overflow-x: hidden;
+  max-width: 100%;
+  /* overflow-x: hidden; */
   background-color: #000;
   color: var(--color-dark-100);
-  /* font-family: var(--font-semibold); */
   font-family: 'Manrope', sans-serif;
 }
+
+@utility col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
 
 @utility flex-center {
   @apply flex items-center justify-center;
@@ -68,10 +51,6 @@ body {
 
 @utility flex-between {
   @apply flex items-center justify-between;
-}
-
-@utility col-center {
-  @apply flex flex-col items-center justify-center;
 }
 
 @utility abs-center {
@@ -88,10 +67,40 @@ body {
 
 @utility small-medium {
   @apply font-medium text-xs;
-}
+ }
 
 @layer components {
-  header {
+  #hero {
+    @apply col-center mt-40 lg:mt-20 2xl:mt-[7vh];
+
+    div {
+      @apply relative z-10 col-center lg:translate-y-16;
+
+      h1 {
+        @apply font-semibold lg:text-3xl 2xl:text-5xl text-white;
+      }
+
+      img {
+        @apply mx-auto w-2/3 max-w-full;
+      }
+    }
+
+    video {
+      @apply mx-auto lg:translate-y-5 2xl:translate-y-0;
+    }
+
+    button {
+      @apply relative z-10 bg-primary text-white py-2 px-6 mt-10 lg:mt-0 mb-5 rounded-full font-semibold text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
+    }
+
+    p {
+      @apply lg:h3-semibold base-semibold;
+    }
+  }
+}
+
+
+/*  header {
     @apply w-screen fixed top-0 left-0 z-50 flex-center bg-black min-h-[7vh];
 
     nav {
@@ -126,7 +135,7 @@ body {
       }
 
       img {
-        @apply container mx-auto w-2/3;
+        @apply mx-auto w-2/3 max-w-full;
       }
     }
 
@@ -345,19 +354,19 @@ body {
         .apple-gradient {
           @apply p-10 rounded-3xl flex items-center gap-7 relative;
 
-          background: #1d1d1f;
-          background-clip: padding-box; /* !important */
-          border: 3px solid transparent; /* !important */
-
+          background: #1d1d1f; */
+  /* background-clip: padding-box; !important */
+  /* border: 3px solid transparent; !important */
+  /* 
           ::before {
             content: "";
             pointer-events: none;
             position: absolute;
             inset: 0px;
-            z-index: -1;
-            margin: -5px; /* !important */
-            border-radius: 24px; /* !important */
-            background: linear-gradient(
+            z-index: -1; */
+  /* margin: -5px; !important */
+  /* border-radius: 24px; !important */
+  /* background: linear-gradient(
               91deg,
               #0096ff 0%,
               #bb64ff 42%,
@@ -432,5 +441,4 @@ body {
         }
       }
     }
-  }
-}
+  /} */
