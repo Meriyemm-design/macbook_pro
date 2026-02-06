@@ -7,8 +7,8 @@ import { navlinks } from '../constants'
 const NavBar = () => {
     return (
         <>
-            <header className='flex align-center justify-center'>
-                <nav className='flex align-center justify-center gap-[150px] px-10 py-6'>
+            <header className='flex items-center justify-center'>
+                <nav className='flex items-center justify-center gap-[150px] px-10 py-6'>
                     <img src={logo} alt="logo" />
 
                     {/* creating nav links using an object and array */}
